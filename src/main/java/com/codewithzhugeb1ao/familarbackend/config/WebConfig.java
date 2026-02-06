@@ -13,7 +13,8 @@ public class WebConfig implements WebMvcConfigurer {
     private String uploadDir;
 
     /**
-     * Cấu hình để serve static files từ thư mục uploads
+     * Config to serve static files from the uploads directory
+     * 
      */
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
@@ -22,7 +23,7 @@ public class WebConfig implements WebMvcConfigurer {
     }
 
     /**
-     * Cấu hình CORS cho phép frontend gọi API
+     * Configure CORS to allow frontend to call APIs
      */
     @Override
     public void addCorsMappings(CorsRegistry registry) {

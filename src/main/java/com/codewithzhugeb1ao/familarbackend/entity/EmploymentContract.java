@@ -3,6 +3,8 @@ package com.codewithzhugeb1ao.familarbackend.entity;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import lombok.Getter;
 import lombok.Setter;
@@ -19,6 +21,10 @@ public class EmploymentContract {
     @Id
     @Column(name = "id", nullable = false, length = 36)
     private String id;
+
+    @ManyToOne
+    @JoinColumn(name = "emp_id", nullable = false)
+    private Employee employee;
 
     @Column(name = "contract_no", nullable = false, length = 50)
     private String contractNo;
@@ -42,6 +48,4 @@ public class EmploymentContract {
     @ColumnDefault("CURRENT_TIMESTAMP")
     @Column(name = "updated_at")
     private Instant updatedAt;
-
-
 }

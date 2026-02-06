@@ -1,16 +1,21 @@
 package com.codewithzhugeb1ao.familarbackend.dto;
 
+import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.time.Instant;
 import java.time.LocalDate;
 
 /**
- * DTO để nhận dữ liệu Employee từ frontend (không bao gồm image vì image sẽ được gửi riêng qua MultipartFile)
+ * DTO for displaying full employee details (all fields)
  */
 @Getter
 @Setter
-public class EmployeeDTO {
+@NoArgsConstructor
+@AllArgsConstructor
+public class EmployeeDetailDTO {
     private String id;
     private String fullName;
     private String gender;
@@ -30,4 +35,7 @@ public class EmployeeDTO {
     private String maritalStatus;
     private LocalDate dateIn;
     private String specialization;
+    private String image;
+    private Instant createdAt;
+    private Instant updatedAt;
 }
